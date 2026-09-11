@@ -161,30 +161,3 @@ Azadmarzabadi, M. (2026). PSIQIT: Python Scientific Quantum Information Toolkit 
 
 **Mahdi Azadmarzabadi** - [psiqitofficial@protonmail.com](mailto:psiqitofficial@protonmail.com)  
 Project Link: [https://github.com/psiqit/psiqit](https://github.com/psiqit/psiqit)
-```
-
----
-
-### 💡 تغییرات اعمال شده:
-
-1. **اضافه کردن DOI به BibTeX**: خطوط `doi` و `url` اضافه شدند که باعث می‌شود این entry به طور کامل در Google Scholar و دیگر پایگاه‌های علمی نمایه شود.
-2. **اضافه کردن publisher**: Zenodo به عنوان ناشر رسمی ثبت شد.
-3. **توضیح کاربردی**: یک جمله درباره‌ی دکمه‌ی "Cite this repository" در سایدبار گیت‌هاب اضافه شد.
-4. **فرمت APA**: برای کاربرانی که از LaTeX استفاده نمی‌کنند، فرمت APA هم اضافه شد.
-
----
-
-### 🚀 قدم‌های نهایی برای انتشار:
-
-```bash
-# 1. فایل‌های تغییر یافته را اضافه کنید
-git add README.md README.fa.md CITATION.cff
-
-# 2. کامیت کنید
-git commit -m "Update README with official Zenodo DOI"
-
-# 3. پوش کنید
-git push
-
-# 4. مستندات را روی GitHub Pages آپلود کنید
-mkdocs gh-deploy
