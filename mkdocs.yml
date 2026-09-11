@@ -1,0 +1,101 @@
+# mkdocs.yml
+site_name: PSIQIT Documentation
+site_description: Python Scientific Quantum Information Toolkit
+site_url: https://psiqit.github.io/psiqit/
+repo_url: https://github.com/psiqit/psiqit
+repo_name: psiqit/psiqit
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quick-start.md
+      - "Architecture & Design": getting-started/architecture.md
+  - Core Concepts:
+      - "States & Operators": concepts/states-operators.md
+      - Building Circuits: concepts/circuits.md
+      - "Measurement & Observables": concepts/measurements.md
+  - Tutorials:
+      - Overview: tutorials/index.md
+      - "1. Your First Circuit: Bell State": tutorials/01-bell-state.md
+      - "2. Quantum Algorithms: Grover's Search": tutorials/02-grover-search.md
+      - "3. Quantum Fourier Transform (QFT)": tutorials/03-qft.md
+      - "4. Variational Quantum Eigensolver (VQE)": tutorials/04-vqe.md
+      - "5. Open Quantum Systems: Lindblad Dynamics": tutorials/05-lindblad.md
+      - "6. Quantum Error Correction: Shor Code": tutorials/06-qec.md
+  - API Reference:
+    - Overview: api/index.md
+    - "psiqit.algorithms": api/algorithms.md
+    - "psiqit.circuits": api/circuits.md
+    - "psiqit.dynamics": api/dynamics.md
+    - "psiqit.error_correction": api/error_correction.md
+    - "psiqit.info": api/info.md
+    - "psiqit.interface": api/interface.md
+    - "psiqit.lab": api/lab.md
+    - "psiqit.math": api/math.md
+    - "psiqit.noise_canceling": api/noise_canceling.md
+    - "psiqit.qml": api/qml.md
+    - "psiqit.quantum": api/quantum.md
+    - "psiqit.utils": api/utils.md
+    - "psiqit.variational": api/variational.md
+    - "psiqit.visualization": api/visualization.md
+  - Advanced Use Cases:
+      - Overview: examples/index.md
+      - "Quantum Teleportation": examples\01-quantum-teleportation.md
+      - "NISQ Simulations & Noise Models": examples/nisq-simulations.md
+      - "Quantum Chemistry with VQE": examples/03-vqe-molecule.md
+  - Community & Development:
+      - Contributing: contributing.md
+      - Changelog: changelog.md
+      - License: license.md
+      - Citation: citation.md
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

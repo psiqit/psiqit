@@ -1,0 +1,105 @@
+# pyproject.toml - PSIQIT v1.0.3
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psiqit"
+version = "1.0.3"
+description = "Python Scientific Quantum Information Toolkit: A comprehensive framework for quantum circuit simulation, open systems, and algorithms."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Mahdi Azadmarzabadi", email = "psiqitofficial@protonmail.com"}
+]
+maintainers = [
+    {name = "Mahdi Azadmarzabadi", email = "psiqitofficial@protonmail.com"}
+]
+keywords = [
+    "quantum computing",
+    "quantum simulation",
+    "quantum circuits",
+    "quantum algorithms",
+    "quantum information",
+    "lindblad",
+    "vqe",
+    "qaoa",
+    "quantum machine learning"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+# Core dependencies
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "matplotlib>=3.4.0",
+]
+
+# Optional dependencies
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "pre-commit>=2.0.0",
+]
+docs = [
+    "mkdocs>=1.4.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings[python]>=0.20.0",
+]
+full = [
+    "psiqit[dev,docs]",
+]
+
+# Project URLs (shown on PyPI)
+[project.urls]
+Homepage = "https://github.com/psiqit/psiqit"
+Documentation = "https://psiqit.github.io/psiqit/"
+Repository = "https://github.com/psiqit/psiqit"
+"Bug Tracker" = "https://github.com/psiqit/psiqit/issues"
+Changelog = "https://github.com/psiqit/psiqit/blob/main/CHANGELOG.md"
+
+# CLI entry point
+[project.scripts]
+psiqit = "psiqit.interface.cli:main"
+
+# Setuptools config
+[tool.setuptools]
+packages = ["psiqit"]
+
+[tool.setuptools.package-data]
+psiqit = ["py.typed"]
+
+# Dev tools config
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=psiqit --cov-report=term-missing"
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", "build", "dist", ".venv"]

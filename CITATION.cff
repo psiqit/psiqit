@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PSIQIT: Python Scientific Quantum Information Toolkit"
+authors:
+  - name: "PSIQIT Contributors"
+version: 1.0.3
+date-released: 2026-09-10
+url: "https://github.com/psiqit/psiqit"
+repository-code: "https://github.com/psiqit/psiqit"
+abstract: >
+  PSIQIT is a comprehensive Python library for quantum information processing,
+  providing tools for quantum circuit simulation, variational algorithms,
+  quantum error correction, and open quantum systems dynamics.
+keywords:
+  - quantum computing
+  - quantum simulation
+  - variational algorithms
+  - VQE
+  - QAOA
+  - quantum error correction
+  - Lindblad dynamics
+license: MIT
